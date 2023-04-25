@@ -1,0 +1,54 @@
+	We must install the AZ-CLI and kubeCTL.
+	AZ-cli is used to manage many azure devops services from the command line.
+	KubeCTL is a command line tool, and it is used to communicate and control Kubernetes clusters.
+	We are deploying the Kubernetes cluster and connecting the cluster and creating the name spaces using AZ-cli and kubeCTL.
+
+•	We must connect through azure portal
+ 
+
+
+
+
+
+•	Deploying the azure Kubernetes cluster
+
+ 
+
+
+
+
+	After login into aks cluster the config file will be generated.
+	Config file contains secured data and token information, and it will be generated with the help of client certificate data client key data and token.
+ 
+
+
+
+
+	When we launch AKS cluster by default, we get namespaces.
+	Namespaces is nothing but organize cluster into virtual sub-clusters.
+	Deploying the pods, pod is a small scale of deployment nothing but small program with the help of this we can deploy all our services.
+	Commands >kubectl get namespaces
+                     >kubectl get pods
+ 
+
+	We should not deploy services in default namespaces because due to security.
+
+To create namespace command
+>kubectl create ns surya
+>kubectl get namespaces
+
+To know the pod
+>kubectl get pod -n myapp
+
+To describe the whole pod information
+>kubectl describe pod hello1 -n myapp
+
+
+ 
+
+To know the deployment and services
+>kubectl get deployment
+>kubectl get services
+
+ 
+

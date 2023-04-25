@@ -1,0 +1,58 @@
+1. To create 2 networks
+ 
+  docker network create network1
+ 
+  docker network create network2
+ 
+
+2. To see the list of networks 
+ 
+  
+   docker network ls
+ 
+3. start busybox b1 container on network1
+ 
+
+  docker run -it --name b1 --network network1 busybox
+ 
+   Ctrlp+Ctrlq
+ 
+4. find the IP adress of the b1
+ 
+   docker inspect b1
+ 
+5. start busybox b2 container on network1
+ 
+
+  docker run -it --name b2 --network network1 busybox
+ 
+6. start busybox b3 container on network2
+ 
+  docker run -it --name b3 --network network2 busybox
+ 
+7. connect container2 (b2) to network2
+ 
+  docker network connect network2 b2
+ 
+8. Go into container 2 (b2)
+ 
+  docker attach container 2
+ 
+9. from b2 to ping ipaddress of container 1 (b1)
+ 
+   it should communicate ( because contianer 1 and container 2 are sharing the same network i.e., network 1)
+ 
+
+10. from b2 to ping ipaddress of container 3 (b3)
+ 
+   it should communicate ( because contianer 2 and container 3 are sharing the same network i.e., network 2)
+ 
+11. But if we call container 1 from container 3 and viseversa ., call should not happen
+ 
+    because container1 and container 3 are sharing different networks
+ 
+   i.e., container 1 is available in network1
+ 
+   and 
+ 
+         container 3 is available in network2

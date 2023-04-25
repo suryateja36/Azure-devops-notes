@@ -1,0 +1,6 @@
+git config --global user.name "suryateja36"
+
+git config --global user.email "surya.teja@innojc.com"
+
+
+git config --list

@@ -1,0 +1,5 @@
+1.Suspend the virtual machine and collect the .vmss suspend state file. For more information, see Suspending a virtual machine on ESX/ESXi
+ to collect diagnostic information (2005831).
+2.Collect logs from the host running the virtual machine. For more information see Collecting diagnostic information for VMware products (1008524).
+3.Power the virtual machine back on, then reset it.
+4.Engage VMware Support, providing the information collected in steps 1, 3a and 3b. For more information, see How to File a Support Request.
